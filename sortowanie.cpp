@@ -140,7 +140,7 @@ void sortowanieSzybkie(int tab[], int niski, int wysoki) {
     }
 }
 
-// Algorytm sortowania przez  koktajlowe
+// Algorytm sortowania przez  Wstawianie
 void sortowaniePrzezWstawianie(int tab[], int rozmiar) {
     for (int i = 1; i < rozmiar; ++i) {
         int klucz = tab[i];
@@ -168,7 +168,6 @@ int main() {
         cout << tabBabelkowe[i] << " ";
     }
     cout << "\n\n";
-    }
 
     // Przykładowe użycie sortowania koktajlowego
         int tabKoktajlowego[] = {64, 34, 25, 12, 22, 11, 90};
@@ -180,8 +179,6 @@ int main() {
         cout << tabKoktajlowego[i] << " ";
     }
     cout << "\n\n";
- }
-    
 
     // Przykładowe użycie sortowania przez scalanie
     int tabScalanie[] = {64, 34, 25, 12, 22, 11, 90};
@@ -193,7 +190,6 @@ int main() {
         cout << tabScalanie[i] << " ";
     }
     cout << "\n\n";
- }
 
     // Przykładowe użycie sortowania szybkiego
     int tabSzybkie[] = {64, 34, 25, 12, 22, 11, 90};
@@ -205,7 +201,7 @@ int main() {
         cout << tabSzybkie[i] << " ";
     }
     cout << "\n\n";
- }
+ 
     // Przykładowe użycie sortowania przez wstawianie
     int tabWstawianie[] = {64, 34, 25, 12, 22, 11, 90};
     int rozmiarWstawianie = sizeof(tabWstawianie) / sizeof(tabWstawianie[0]);
@@ -216,6 +212,6 @@ int main() {
         cout << tabWstawianie[i] << " ";
     }
     cout << "\n\n";
- }
+ 
     return 0;
 }
