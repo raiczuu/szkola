@@ -114,7 +114,7 @@ void sortowaniePrzezScalanie(int tab[], int lewy, int prawy) {
 }
 
 /////////////////////// Algorytm sortowania szybkiego
-int podzial(int tab[], int niski, int wysoki) {
+int szybkie(int tab[], int niski, int wysoki) {
     int pivot = tab[wysoki];  // Wybierz ostatni element jako pivot
     int i = niski - 1;        // Indeks mniejszego elementu
 
@@ -132,7 +132,7 @@ int podzial(int tab[], int niski, int wysoki) {
 void sortowanieSzybkie(int tab[], int niski, int wysoki) {
     if (niski < wysoki) {
         // Znajdź indeks podziału
-        int pi = podzial(tab, niski, wysoki);
+        int pi = szybkie(tab, niski, wysoki);
 
         // Sortuj osobno elementy przed i po podziale
         sortowanieSzybkie(tab, niski, pi - 1);
