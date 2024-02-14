@@ -68,10 +68,7 @@ int main() {
     cout << "Liniowe wyszukiwanie z wartownikiem: " << indeks2 << endl;
 
     // skokowe
-    int klucz3 = 60;
-    int indeks3 = skokowe(tablica, rozmiar, klucz3);
-    cout << "Skokowe wyszukiwanie: " << indeks3 << endl;
-
+    
     // binarne
     int klucz4 = 20;
     int indeks4 = binarne(tablica, rozmiar, klucz4);
