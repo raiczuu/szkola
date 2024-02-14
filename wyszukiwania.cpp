@@ -28,26 +28,6 @@ int wartownikiem(int *t, int size, int key) {
 }
 
 ///////////////// Algorytm wyszukiwania skokowego
-int skokowe(int *t, int size, int key) {
-    int skok = sqrt(size);
-    int aktualnyIndeks = 0;
-
-    while (t[min(skok, size) - 1] < key) {
-        aktualnyIndeks = skok;
-        skok += sqrt(size);
-        if (aktualnyIndeks >= size) {
-            return -1; // Zwraca -1, jezeli nie byl
-        }
-    }
-
-    for (int i = aktualnyIndeks; i < min(skok, size); ++i) {
-        if (t[i] == key) {
-            return i; // zwraca indeks, jezeli element byl znaleziony
-        }
-    }
-
-    return -1; // Zwraca -1, jezeli nie byl
-}
 
 
 ///////////////// Algorytm wyszukiwania binarnego
