@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     // Przykladowe uzycie sortowania babelkowego
-    int tabBabelkowe[] = {64, 34, 25, 12, 22, 11, 90};
+    int tabBabelkowe[] = {64, 34, 25, 12, 22, 11, 90, 80, 21, 1, 99, 43};
     int rozmiarBabelkowe = sizeof(tabBabelkowe) / sizeof(tabBabelkowe[0]); // oblicza rozmiar tablicy
     sortowanieBabelkowe(tabBabelkowe, rozmiarBabelkowe); // przekazuje tablice i jej rozmiar jako argument
 
@@ -15,7 +15,7 @@ int main() {
     cout << "\n\n";
 
     // koktajlowego
-        int tabKoktajlowego[] = {64, 34, 25, 12, 22, 11, 90};
+        int tabKoktajlowego[] = {64, 34, 25, 12, 22, 11, 90, 80, 21, 1, 99, 43};
     int rozmiarKoktajlowego = sizeof(tabKoktajlowego) / sizeof(tabKoktajlowego[0]); 
     sortowanieKoktajlowe(tabKoktajlowego, rozmiarKoktajlowego);
 
@@ -26,7 +26,7 @@ int main() {
     cout << "\n\n";
 
     // scalanie
-    int tabScalanie[] = {64, 34, 25, 12, 22, 11, 90};
+    int tabScalanie[] = {64, 34, 25, 12, 22, 11, 90, 80, 21, 1, 99, 43};
     int rozmiarScalanie = sizeof(tabScalanie) / sizeof(tabScalanie[0]);
     sortowaniePrzezScalanie(tabScalanie, 0, rozmiarScalanie - 1);
 
@@ -37,7 +37,7 @@ int main() {
     cout << "\n\n";
 
     // szybkiego
-    int tabSzybkie[] = {64, 34, 25, 12, 22, 11, 90};
+    int tabSzybkie[] = {64, 34, 25, 12, 22, 11, 90, 80, 21, 1, 99, 43};
     int rozmiarSzybkie = sizeof(tabSzybkie) / sizeof(tabSzybkie[0]);
     sortowanieSzybkie(tabSzybkie, 0, rozmiarSzybkie - 1);
 
@@ -48,7 +48,7 @@ int main() {
     cout << "\n\n";
  
     // wstawianie
-    int tabWstawianie[] = {64, 34, 25, 12, 22, 11, 90};
+    int tabWstawianie[] = {64, 34, 25, 12, 22, 11, 90, 80, 21, 1, 99, 43};
     int rozmiarWstawianie = sizeof(tabWstawianie) / sizeof(tabWstawianie[0]);
     sortowaniePrzezWstawianie(tabWstawianie, rozmiarWstawianie);
 
