@@ -74,7 +74,7 @@ int binarne(int *t, int size, int key) {
 
 int main() {
     // Przykladowe uzycie sortowania wyszukiwania
-    int tablica[] = {10, 20, 30, 40, 50, 60, 70};
+    int tablica[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120};
     int rozmiar = sizeof(tablica) / sizeof(tablica[0]);
 
     // liniowe
