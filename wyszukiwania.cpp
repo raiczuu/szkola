@@ -3,8 +3,8 @@
 using namespace std;
 
 /////////////////  Algorytm wyszukiwania liniowego
-int liniowe(int *t, int size, int key) { // Przechodzimy przez wszystkie elementy tablicy
-    for (int i = 0; i < size; ++i) { // Jeśli znaleźliśmy klucz, zwracamy jego indeks
+int liniowe(int *t, int size, int key) { // przechodzimy przez wszystkie elementy 
+    for (int i = 0; i < size; ++i) { // jesli znalezlismy klucz zwracamy index
         if (t[i] == key) {
             return i; // zwraca indeks, jezeli element byl znaleziony
         }
