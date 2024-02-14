@@ -133,7 +133,7 @@ int szybkie(int tab[], int niski, int wysoki) {
 
 void sortowanieSzybkie(int tab[], int niski, int wysoki) {
     if (niski < wysoki) {
-        // Znajdź indeks podziału
+        // znajdz indeks podzialu
         int pi = szybkie(tab, niski, wysoki);  // pi = pivot, wywoluje funkcje
 
         // Sortuj osobno elementy przed i po podziale
@@ -148,7 +148,7 @@ void sortowaniePrzezWstawianie(int tab[], int rozmiar) {
         int klucz = tab[i];
         int j = i - 1;
 
-        // Przesuwanie elementów większych niż klucz
+        // przesuwa elementy wieksze niz klucz
         // do jednego miejsca w prawo
         while (j >= 0 && tab[j] > klucz) { 
             tab[j + 1] = tab[j];
@@ -160,18 +160,18 @@ void sortowaniePrzezWstawianie(int tab[], int rozmiar) {
 }
 
 int main() {
-    // Przykładowe użycie sortowania bąbelkowego
+    // Przykladowe uzycie sortowania babelkowego
     int tabBabelkowe[] = {64, 34, 25, 12, 22, 11, 90};
     int rozmiarBabelkowe = sizeof(tabBabelkowe) / sizeof(tabBabelkowe[0]); // oblicza rozmiar tablicy
     sortowanieBabelkowe(tabBabelkowe, rozmiarBabelkowe); // przekazuje tablice i jej rozmiar jako argument
 
-    cout << "Sortowanie bąbelkowe:\n";
+    cout << "Sortowanie babelkowe:\n";
     for (int i = 0; i < rozmiarBabelkowe; ++i) {
         cout << tabBabelkowe[i] << " ";
     }
     cout << "\n\n";
 
-    // Przykładowe użycie sortowania koktajlowego
+    // koktajlowego
         int tabKoktajlowego[] = {64, 34, 25, 12, 22, 11, 90};
     int rozmiarKoktajlowego = sizeof(tabKoktajlowego) / sizeof(tabKoktajlowego[0]); 
     sortowanieKoktajlowe(tabKoktajlowego, rozmiarKoktajlowego);
@@ -182,7 +182,7 @@ int main() {
     }
     cout << "\n\n";
 
-    // Przykładowe użycie sortowania przez scalanie
+    // scalanie
     int tabScalanie[] = {64, 34, 25, 12, 22, 11, 90};
     int rozmiarScalanie = sizeof(tabScalanie) / sizeof(tabScalanie[0]);
     sortowaniePrzezScalanie(tabScalanie, 0, rozmiarScalanie - 1);
@@ -193,7 +193,7 @@ int main() {
     }
     cout << "\n\n";
 
-    // Przykładowe użycie sortowania szybkiego
+    // szybkiego
     int tabSzybkie[] = {64, 34, 25, 12, 22, 11, 90};
     int rozmiarSzybkie = sizeof(tabSzybkie) / sizeof(tabSzybkie[0]);
     sortowanieSzybkie(tabSzybkie, 0, rozmiarSzybkie - 1);
@@ -204,7 +204,7 @@ int main() {
     }
     cout << "\n\n";
  
-    // Przykładowe użycie sortowania przez wstawianie
+    // wstawianie
     int tabWstawianie[] = {64, 34, 25, 12, 22, 11, 90};
     int rozmiarWstawianie = sizeof(tabWstawianie) / sizeof(tabWstawianie[0]);
     sortowaniePrzezWstawianie(tabWstawianie, rozmiarWstawianie);
