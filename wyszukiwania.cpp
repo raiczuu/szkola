@@ -2,96 +2,99 @@
 #include <cmath>
 using namespace std;
 
-// Algorytm wyszukiwania liniowego
-int wyszukiwanieLiniowe(int tab[], int rozmiar, int szukana) {
-    for (int i = 0; i < rozmiar; ++i) {
-        if (tab[i] == szukana) {
-            return i; // Zwraca indeks, jeżeli element został znaleziony
+/////////////////  Algorytm wyszukiwania liniowego
+int liniowe(int *t, int size, int key) {
+    for (int i = 0; i < size; ++i) {
+        if (t[i] == key) {
+            return i; // zwraca indeks, jezeli element byl znaleziony
         }
     }
-    return -1; // Zwraca -1, jeżeli element nie został znaleziony
+    return -1; // Zwraca -1, jezeli nie byl
 }
 
-// Algorytm wyszukiwania liniowego z wartownikiem
-int wyszukiwanieLinioweWartownik(int tab[], int rozmiar, int szukana) {
-    int ostatniElement = tab[rozmiar - 1]; // Zapamiętaj ostatni element
-    tab[rozmiar - 1] = szukana; // Ustaw szukaną wartość na ostatnim miejscu
-
+///////////////// Algorytm wyszukiwania liniowego z wartownikiem
+int wartownikiem(int *t, int size, int key) {
+    t[size] = key; // ustawia wartownik na koniec tablicy
     int i = 0;
-    while (tab[i] != szukana) {
+    while (t[i] != key) {
         ++i;
     }
 
-    tab[rozmiar - 1] = ostatniElement; // Przywróć oryginalną wartość na ostatnim miejscu
-
-    if (i < rozmiar - 1 || tab[rozmiar - 1] == szukana) {
-        return i; // Zwraca indeks, jeżeli element został znaleziony
+    if (i < size) {
+        return i; // zwraca indeks, jezeli element byl znaleziony
     } else {
-        return -1; // Zwraca -1, jeżeli element nie został znaleziony
+        return -1; // Zwraca -1, jezeli nie byl
     }
 }
 
-// Algorytm wyszukiwania skokowego
-int wyszukiwanieSkokowe(int tab[], int rozmiar, int szukana) {
-    int skok = sqrt(rozmiar);
+///////////////// Algorytm wyszukiwania skokowego
+int skokowe(int *t, int size, int key) {
+    int skok = sqrt(size);
     int aktualnyIndeks = 0;
 
-    while (tab[min(skok, rozmiar) - 1] < szukana) {
+    while (t[min(skok, size) - 1] < key) {
         aktualnyIndeks = skok;
-        skok += sqrt(rozmiar);
-        if (aktualnyIndeks >= rozmiar) {
-            return -1; // Zwraca -1, jeżeli element nie został znaleziony
+        skok += sqrt(size);
+        if (aktualnyIndeks >= size) {
+            return -1; // Zwraca -1, jezeli nie byl
         }
     }
 
-    for (int i = aktualnyIndeks; i < min(skok, rozmiar); ++i) {
-        if (tab[i] == szukana) {
-            return i; // Zwraca indeks, jeżeli element został znaleziony
+    for (int i = aktualnyIndeks; i < min(skok, size); ++i) {
+        if (t[i] == key) {
+            return i; // zwraca indeks, jezeli element byl znaleziony
         }
     }
 
-    return -1; // Zwraca -1, jeżeli element nie został znaleziony
+    return -1; // Zwraca -1, jezeli nie byl
 }
 
-// Algorytm wyszukiwania binarnego (dla posortowanej tablicy)
-int wyszukiwanieBinarne(int tab[], int lewy, int prawy, int szukana) {
+
+///////////////// Algorytm wyszukiwania binarnego
+int binarne(int *t, int size, int key) {
+    int lewy = 0;
+    int prawy = size - 1;
+
     while (lewy <= prawy) {
         int srodek = lewy + (prawy - lewy) / 2;
 
-        if (tab[srodek] == szukana) {
-            return srodek; // Zwraca indeks, jeżeli element został znaleziony
+        if (t[srodek] == key) {
+            return srodek; // zwraca indeks, jezeli element byl znaleziony
         }
 
-        if (tab[srodek] < szukana) {
+        if (t[srodek] < key) {
             lewy = srodek + 1;
         } else {
             prawy = srodek - 1;
         }
     }
 
-    return -1; // Zwraca -1, jeżeli element nie został znaleziony
+    return -1; // Zwraca -1, jezeli nie byl
 }
 
 int main() {
-    // Przykładowe użycie algorytmów wyszukiwania
-        int tab[] = {10, 20, 30, 40, 50, 60, 70};
-    int rozmiar = sizeof(tab) / sizeof(tab[0]);
+    // Przykladowe uzycie sortowania wyszukiwania
+    int tablica[] = {10, 20, 30, 40, 50, 60, 70};
+    int rozmiar = sizeof(tablica) / sizeof(tablica[0]);
 
-    int szukana1 = 40;
-    int indeks1 = wyszukiwanieLiniowe(tab, rozmiar, szukana1);
-    cout << "Wyszukiwanie liniowe: " << indeks1 << endl;
+    // liniowe
+    int klucz1 = 40;
+    int indeks1 = liniowe(tablica, rozmiar, klucz1);
+    cout << "Liniowe wyszukiwanie: " << indeks1 << endl;
 
-    int szukana2 = 50;
-    int indeks2 = wyszukiwanieLinioweWartownik(tab, rozmiar, szukana2);
-    cout << "Wyszukiwanie liniowe z wartownikiem: " << indeks2 << endl;
+    // Liniowe z wartownikem
+    int klucz2 = 50;
+    int indeks2 = wartownikiem(tablica, rozmiar, klucz2);
+    cout << "Liniowe wyszukiwanie z wartownikiem: " << indeks2 << endl;
 
-    int szukana3 = 60;
-    int indeks3 = wyszukiwanieSkokowe(tab, rozmiar, szukana3);
-    cout << "Wyszukiwanie skokowe: " << indeks3 << endl;
+    // skokowe
+    int klucz3 = 60;
+    int indeks3 = skokowe(tablica, rozmiar, klucz3);
+    cout << "Skokowe wyszukiwanie: " << indeks3 << endl;
 
-    int szukana4 = 20;
-    int indeks4 = wyszukiwanieBinarne(tab, 0, rozmiar - 1, szukana4);
-    cout << "Wyszukiwanie binarne: " << indeks4 << endl;
-
+    // binarne
+    int klucz4 = 20;
+    int indeks4 = binarne(tablica, rozmiar, klucz4);
+    cout << "Binarne wyszukiwanie: " << indeks4 << endl;
     return 0;
 }
